@@ -13,7 +13,6 @@ export function validate(a: any, b?: any): void {
  * Checks if the second input is null or not.
  * @param b - The second input, if it exists
  */
-export function checkNull(b: any): asserts b is number {
-	if (b === null) throw new Error('Two inputs required for this operation');
+export function checkUndefined(b: any): asserts b is number {
 	if (b === undefined) throw new Error('Two inputs required for this operation');
 }

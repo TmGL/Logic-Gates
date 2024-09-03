@@ -1,4 +1,4 @@
-import { validate, checkNull, tables, Binary, Gate } from './utils';
+import { validate, checkUndefined, tables, Binary, Gate } from './utils';
 
 /**
  * Representation of logic gates which takes one or two inputs, performs a boolean operation on them and returns a boolean output
@@ -36,7 +36,7 @@ export default class Gates {
 	 * Returns true if both inputs are true.
 	 */
 	public get AND(): boolean {
-		checkNull(this.b);
+		checkUndefined(this.b);
 		return Gates.AND(this.a, this.b);
 	}
 
@@ -44,7 +44,7 @@ export default class Gates {
 	 * Returns true if either input is true.
 	 */
 	public get OR(): boolean {
-		checkNull(this.b);
+		checkUndefined(this.b);
 		return Gates.OR(this.a, this.b);
 	}
 
@@ -52,7 +52,7 @@ export default class Gates {
 	 * Returns false if both inputs are true.
 	 */
 	public get NAND(): boolean {
-		checkNull(this.b);
+		checkUndefined(this.b);
 		return Gates.NAND(this.a, this.b);
 	}
 
@@ -60,7 +60,7 @@ export default class Gates {
 	 * Returns true if either input is true.
 	 */
 	public get NOR(): boolean {
-		checkNull(this.b);
+		checkUndefined(this.b);
 		return Gates.NOR(this.a, this.b);
 	}
 
@@ -68,7 +68,7 @@ export default class Gates {
 	 * Returns true if both inputs are equal.
 	 */
 	public get XAND(): boolean {
-		checkNull(this.b);
+		checkUndefined(this.b);
 		return Gates.XAND(this.a, this.b);
 	}
 
@@ -76,7 +76,7 @@ export default class Gates {
 	 * Returns true if only one input is true.
 	 */
 	public get XOR(): boolean {
-		checkNull(this.b);
+		checkUndefined(this.b);
 		return Gates.XOR(this.a, this.b);
 	}
 
@@ -84,7 +84,7 @@ export default class Gates {
 	 * Returns false is both inputs are equal.
 	 */
 	public get XNAND(): boolean {
-		checkNull(this.b);
+		checkUndefined(this.b);
 		return Gates.XAND(this.a, this.b);
 	}
 
@@ -92,7 +92,7 @@ export default class Gates {
 	 * Returns false if only one input is true.
 	 */
 	public get XNOR(): boolean {
-		checkNull(this.b);
+		checkUndefined(this.b);
 		return Gates.XNOR(this.a, this.b);
 	}
 
