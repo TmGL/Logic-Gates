@@ -8,7 +8,7 @@ type Gate = 'buffer' | 'not' | 'and' | 'or' | 'nand' | 'nor' | 'xand' | 'xor' | 
  */
 export default class Gates {
 	public a: number;
-	public b: number | null;
+	public b?: number;
 
 	/**
 	 * Allows two values to be set and used multiple times.
@@ -16,9 +16,9 @@ export default class Gates {
 	 * @param b - The second value
 	 */
 	public constructor(a: number, b?: number) {
-		this.a = +a
-		this.b = b ?? null;
 		validate(a, b);
+		this.a = +a
+		if (typeof b !== 'undefined') this.b = +b;
 	}
 
 	/**
@@ -40,7 +40,7 @@ export default class Gates {
 	 */
 	public get AND(): boolean {
 		checkNull(this.b);
-		return Gates.AND(this.a, <number>this.b);
+		return Gates.AND(this.a, this.b);
 	}
 
 	/**
@@ -48,7 +48,7 @@ export default class Gates {
 	 */
 	public get OR(): boolean {
 		checkNull(this.b);
-		return Gates.OR(this.a, <number>this.b);
+		return Gates.OR(this.a, this.b);
 	}
 
 	/**
@@ -56,7 +56,7 @@ export default class Gates {
 	 */
 	public get NAND(): boolean {
 		checkNull(this.b);
-		return Gates.NAND(this.a, <number>this.b);
+		return Gates.NAND(this.a, this.b);
 	}
 
 	/**
@@ -64,7 +64,7 @@ export default class Gates {
 	 */
 	public get NOR(): boolean {
 		checkNull(this.b);
-		return Gates.NOR(this.a, <number>this.b);
+		return Gates.NOR(this.a, this.b);
 	}
 
 	/**
@@ -72,7 +72,7 @@ export default class Gates {
 	 */
 	public get XAND(): boolean {
 		checkNull(this.b);
-		return Gates.XAND(this.a, <number>this.b);
+		return Gates.XAND(this.a, this.b);
 	}
 
 	/**
@@ -80,7 +80,7 @@ export default class Gates {
 	 */
 	public get XOR(): boolean {
 		checkNull(this.b);
-		return Gates.XOR(this.a, <number>this.b);
+		return Gates.XOR(this.a, this.b);
 	}
 
 	/**
@@ -88,7 +88,7 @@ export default class Gates {
 	 */
 	public get XNAND(): boolean {
 		checkNull(this.b);
-		return Gates.XAND(this.a, <number>this.b);
+		return Gates.XAND(this.a, this.b);
 	}
 
 	/**
@@ -96,7 +96,7 @@ export default class Gates {
 	 */
 	public get XNOR(): boolean {
 		checkNull(this.b);
-		return Gates.XNOR(this.a, <number>this.b);
+		return Gates.XNOR(this.a, this.b);
 	}
 
 	/**
