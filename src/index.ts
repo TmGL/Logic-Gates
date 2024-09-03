@@ -4,7 +4,7 @@ import { validate, checkNull } from './utils/checks';
 type Gate = 'buffer' | 'not' | 'and' | 'or' | 'nand' | 'nor' | 'xand' | 'xor' | 'xnand' | 'xnor';
 
 /**
- * Representation of logic gates which take two inputs and performs a boolean operation on them, returning one input.
+ * Representation of logic gates which takes one or two inputs, performs a boolean operation on them and returns a boolean output
  */
 export default class Gates {
 	public a: number;
