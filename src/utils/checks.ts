@@ -15,4 +15,5 @@ export function validate(a: any, b?: any): void {
  */
 export function checkNull(b: any): asserts b is number {
 	if (b === null) throw new Error('Two inputs required for this operation');
+	if (b === undefined) throw new Error('Two inputs required for this operation');
 }
