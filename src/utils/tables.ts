@@ -1,4 +1,5 @@
 const tables = {
+import { Gate, Binary } from './types';
 	'buffer': [
 		{ A: 0, Y: 0 },
 		{ A: 1, Y: 1 }
@@ -57,4 +58,3 @@ const tables = {
 	]
 };
 
-export default tables;
