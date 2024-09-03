@@ -1,22 +1,21 @@
-
 import { validate, checkNull, tables, Binary, Gate } from './utils';
 
 /**
  * Representation of logic gates which takes one or two inputs, performs a boolean operation on them and returns a boolean output
  */
 export default class Gates {
-	public a: number;
-	public b?: number;
+	public a: Binary;
+	public b?: Binary;
 
 	/**
 	 * Allows two values to be set and used multiple times.
 	 * @param a - The first value
 	 * @param b - The second value
 	 */
-	public constructor(a: number, b?: number) {
+	public constructor(a: Binary, b?: Binary) {
 		validate(a, b);
-		this.a = +a
-		if (typeof b !== 'undefined') this.b = +b;
+		this.a = a
+		if (typeof b !== 'undefined') this.b = b;
 	}
 
 	/**
@@ -100,7 +99,7 @@ export default class Gates {
 	/**
 	 * Returns false if input is 0, true otherwise.
 	 */
-	public static buffer(a: number): boolean {
+	public static buffer(a: Binary): boolean {
 		validate(a);
 		return Boolean(a);
 	}
@@ -108,7 +107,7 @@ export default class Gates {
 	/**
 	 * Returns a negation on the input.
 	 */
-	public static NOT(a: number): boolean {
+	public static NOT(a: Binary): boolean {
 		validate(a);
 		return !Boolean(a);
 	}
@@ -116,7 +115,7 @@ export default class Gates {
 	/**
 	 * Returns true if both inputs are true.
 	 */
-	public static AND(a: number, b: number): boolean {
+	public static AND(a: Binary, b: Binary): boolean {
 		validate(a, b);
 		return Boolean(a && b);
 	}
@@ -124,7 +123,7 @@ export default class Gates {
 	/**
 	 * Returns true if either input is true.
 	 */
-	public static OR(a: number, b: number): boolean {
+	public static OR(a: Binary, b: Binary): boolean {
 		validate(a, b);
 		return Boolean(a || b);
 	}
@@ -132,7 +131,7 @@ export default class Gates {
 	/**
 	 * Returns false if both inputs are true.
 	 */
-	public static NAND(a: number, b: number): boolean {
+	public static NAND(a: Binary, b: Binary): boolean {
 		validate(a, b);
 		return !(this.AND(a, b));
 	}
@@ -140,7 +139,7 @@ export default class Gates {
 	/**
 	 * Returns true if either input is true.
 	 */
-	public static NOR(a: number, b: number): boolean {
+	public static NOR(a: Binary, b: Binary): boolean {
 		validate(a, b);
 		return !(this.OR(a, b));
 	}
@@ -148,7 +147,7 @@ export default class Gates {
 	/**
 	 * Returns true if both inputs are equal.
 	 */
-	public static XAND(a: number, b: number): boolean {
+	public static XAND(a: Binary, b: Binary): boolean {
 		validate(a, b);
 		return a === b;
 	}
@@ -156,7 +155,7 @@ export default class Gates {
 	/**
 	 * Returns true if only one input is true.
 	 */
-	public static XOR(a: number, b: number): boolean {
+	public static XOR(a: Binary, b: Binary): boolean {
 		validate(a, b);
 		return a !== b;
 	}
@@ -164,7 +163,7 @@ export default class Gates {
 	/**
 	 * Returns false is both inputs are equal.
 	 */
-	public static XNAND(a: number, b: number): boolean {
+	public static XNAND(a: Binary, b: Binary): boolean {
 		validate(a, b);
 		return !(this.XAND(a, b));
 	}
@@ -172,7 +171,7 @@ export default class Gates {
 	/**
 	 * Returns false if only one input is true.
 	 */
-	public static XNOR(a: number, b: number): boolean {
+	public static XNOR(a: Binary, b: Binary): boolean {
 		validate(a, b);
 		return !(this.XOR(a, b));
 	}

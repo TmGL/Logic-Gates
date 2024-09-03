@@ -1,5 +1,12 @@
-const tables = {
 import { Gate, Binary } from './types';
+
+interface Table {
+	A: Binary;
+	Y: Binary;
+	B?: Binary
+}
+
+export const tables: Record<Gate, Table[]> = {
 	'buffer': [
 		{ A: 0, Y: 0 },
 		{ A: 1, Y: 1 }
@@ -57,4 +64,3 @@ import { Gate, Binary } from './types';
 		{ A: 1, B: 1, Y: 1 }
 	]
 };
-
