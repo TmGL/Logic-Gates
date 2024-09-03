@@ -1,6 +1,6 @@
 {
   "name": "logic-gates",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Simple representation of logic gates",
   "main": "./src/index.ts",
   "scripts": {
