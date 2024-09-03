@@ -3,7 +3,7 @@ import { validate, checkUndefined, tables, Binary, Gate } from './utils';
 /**
  * Representation of logic gates which takes one or two inputs, performs a boolean operation on them and returns a boolean output
  */
-export default class Gates {
+export class Gates {
 	public a: Binary;
 	public b?: Binary;
 
@@ -183,3 +183,5 @@ export default class Gates {
 		return console.table(tables[gate?.toLowerCase() as Gate]);
 	}
 }
+
+export default Gates;
